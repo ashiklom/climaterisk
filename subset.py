@@ -42,5 +42,5 @@ if __name__ == '__main__':
     ssp585 = sorted(data_dir.glob("SSP585_*.nc4"))
     allfiles = histfiles + ssp245 + ssp585
 
-    with Pool() as pool:
+    with Pool(1) as pool:
         pool.map(process_file, allfiles)
